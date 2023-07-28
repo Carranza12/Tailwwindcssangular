@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BtnComponent {
   @Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
-  @Input() colorBtn: 'danger' | 'primary' | 'success' = 'success';
+  @Input() colorBtn: 'danger' | 'primary' | 'success' | 'yellow' = 'success';
 
   get colors() {
     return {
@@ -19,6 +19,9 @@ export class BtnComponent {
       'bg-danger-700': this.colorBtn === 'danger',
       'hover:bg-danger-800': this.colorBtn === 'danger',
       'focus:ring-danger-300': this.colorBtn === 'danger',
+      'bg-yellow-400': this.colorBtn === 'yellow',
+      'hover:bg-yellow-500': this.colorBtn === 'yellow',
+      'focus:ring-yellow-500': this.colorBtn === 'yellow',
     }
   }
 }

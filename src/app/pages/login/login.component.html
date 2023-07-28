@@ -7,7 +7,9 @@
     </div>
     <div class="relative w:full sm:w-7/12 md:w-6/12 mx-auto">
         <header class="pt-6 pb-2 flex justify-center">
-            <img class="w-56" src="/assets/images/logo-gradient-blue-trello.png" alt="logo">
+            <a routerLink="/">
+                <h1 class="italic font-bold text-yellow-400	text-6xl">Run stats</h1>
+            </a>
         </header>
         <div class="bg-white rounded shadow-none sm:shadow-lg md:px-10 py-4 px-6">
             <div class="mb-4">
@@ -22,7 +24,7 @@
                             class="w-full rounded bg-gray-100 border-2 border-gray-300">
                     </div>
                     <div>
-                        <app-btn [colorBtn]="'success'" [typeBtn]="'submit'">Test</app-btn>
+                        <app-btn [colorBtn]="'yellow'" [typeBtn]="'submit'">Test</app-btn>
                     </div>
                 </form>
             </div>

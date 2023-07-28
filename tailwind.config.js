@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors:{
         success: colors.green,
-        primary: colors.blue,
+        'primary': '#0F172A',
         danger: colors.red
       }
     },
