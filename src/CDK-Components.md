@@ -1,12 +1,7 @@
 
 - [DynamicAccordion](#DynamicAccordion)
 - [overlay](#overlay)
-- [Dropdown v1](#dropdown-v1)
-- [Dropdown v2](#dropdown-v2)
-- [Home](#home)
-- [Accordion](#accordion)
-- [Board](#board)
-- [References](#references)
+
 
 
 
@@ -147,5 +142,87 @@ export class ActivitiesComponent {
 
 
 ## Overlay
-
+El componente "Acordcion" está diseñado para mostrar contenido encima de la misma pantalla que tenemos.
 ![overlay]
+
+### navbar.component.html
+```
+ <div class="flex items-center">
+    <button type="button" class="flex rounded-full" aria-expanded="false" type="button"
+    (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin">
+        <img class="object-cover w-8 h-8 rounded-full" src="/assets/images/Captura de pantalla 2023-05-04 144455.png"
+        alt="user photo" />
+    </button>
+</div>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="menuOverlay" [cdkConnectedOverlayOpen]="isOpen">
+    <div
+    class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+  >
+    <div class="py-3 px-4 flex justify-between">
+      <span class="block text-sm text-center text-gray-900">Mi cuenta</span>
+      <button (click)="isOpen = !isOpen" class="block text-sm text-gray-900">
+        x
+      </button>
+    </div>
+    <div class="py-3 px-4 flex items-center space-x-4">
+      <img
+        class="w-10 h-10 rounded-full"
+        src="/assets/images/Captura de pantalla 2023-05-04 144455.png"
+        alt=""
+      />
+      <div class="space-y-1">
+        <div>Francisco Carranza</div>
+        <div class="text-sm text-gray-500">francisco@gmail.com</div>
+      </div>
+    </div>
+    <ul class="py-1" >
+      <li>
+        <a
+          href="#"
+          class="block py-2 px-4 text-sm text-gray-700 hover:bg-primary hover:text-white"
+          >Mi Perfil</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block py-2 px-4 text-sm text-gray-700 hover:bg-primary hover:text-white"
+          >Actividades</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block py-2 px-4 text-sm text-gray-700 hover:bg-primary hover:text-white"
+          >Marcas Personales</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block py-2 px-4 text-sm text-gray-700 hover:bg-primary hover:text-white"
+          >Configuración</a
+        >
+      </li>
+    </ul>
+    <ul class="py-1">
+      <li>
+        <a
+          href="#"
+          class="block py-2 px-4 text-sm text-gray-700 hover:font-bold hover:text-primary"
+          >Cerrar sesión</a
+        >
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+```
+### navbar.component.ts
+
+```
+export class NavbarComponent {
+  isOpenModal = false
+}
+```
