@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   isOpen = false;
   
+  isOpenModal = false
 }

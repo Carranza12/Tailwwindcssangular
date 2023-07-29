@@ -9,7 +9,11 @@ module.exports = {
       colors:{
         success: colors.green,
         'primary': '#0F172A',
-        danger: colors.red
+        danger: colors.red,
+        secondary : colors.yellow,
+        alta : '#D32020',
+        suave : '#79C349',
+        moderada : '#F9972D'
       }
     },
   },

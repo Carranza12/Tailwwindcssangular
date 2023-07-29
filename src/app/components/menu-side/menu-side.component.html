@@ -1,0 +1,22 @@
+<div class="w-1/5 mr-4 ">
+    <ul class="flex flex-col font-medium text-gray-700">
+      <li>
+        <a routerLink="/boards" class=" py-1 px-3 "
+        [ngClass]="path === 'boards' ? 'bg-sky-100 rounded text-sky-700' : 'block' "
+          > Boards</a
+        >
+      </li>
+      <li>
+        <a routerLink="/activities" class=" py-1 px-3"
+        [ngClass]="path === 'activities' ? 'bg-sky-100 rounded text-sky-700' : 'block' "
+          > Activities</a
+        >
+      </li>
+      <li>
+        <a routerLink="/binnacle"  class=" py-1 px-3"
+        [ngClass]="path === 'binnacle' ? 'bg-sky-100 rounded text-sky-700' : 'block' "
+          >Bitácora</a
+        >
+      </li>
+    </ul>
+  </div>

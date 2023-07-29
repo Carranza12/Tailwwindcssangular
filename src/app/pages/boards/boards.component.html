@@ -1,2 +1,30 @@
 <app-navbar></app-navbar>
-<h1>boards</h1>
+<div class="container mx-auto flex mt-5">
+    <app-menu-side></app-menu-side>
+    <div class="w-full">
+        <h1 class="text-3xl font-bold mb-4"> Estadísticas</h1>
+        <div class="select w-96 mt-5">
+            <select
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg text-black focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Selecciona un período de tiempo</option>
+                <option>Por día</option>
+                <option>Por semana</option>
+                <option>Por mes</option>
+                <option>Por año</option>
+            </select>
+        </div>
+        <div class="grid grid-cols-4 gap-4 mt-5">
+            <div class="w-full bg-sky-700 px-4 py-2 rounded text-white font-bold h-24">
+                <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">104km</h2>
+                <p class="leading-relaxed">Distancia</p>
+            </div>
+            <div class="w-full bg-green-700 px-4 py-2 rounded text-white font-bold h-24">Board 1</div>
+            <div class="w-full bg-amber-700 px-4 py-2 rounded text-white font-bold h-24">Board 1</div>
+            <div class="w-full bg-indigo-700 px-4 py-2 rounded text-white font-bold h-24">Board 1</div>
+        </div>
+        <canvas baseChart class="chart" [data]="barChartData" [options]="barChartOptions" [type]="barChartType"
+            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+        </canvas>
+
+    </div>
+</div>

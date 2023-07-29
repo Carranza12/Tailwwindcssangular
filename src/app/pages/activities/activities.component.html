@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto flex mt-5">
+    <app-menu-side class="hidden md:block"></app-menu-side>
+    <div class="w-full">
+        <h1 class="text-3xl font-bold mb-4"> Actividades</h1>
+        <cdk-accordion >
+          <cdk-accordion-item #accordionItem="cdkAccordionItem" *ngFor="let item of list" >
+            <button class="bg-primary rounded m-1 mr-0 mb-0 p-2 text-white w-full text-left" type="button" (click)="accordionItem.toggle()"> {{item.label}} </button>
+            <div class="pl-1 mr-0" [style.display]="accordionItem.expanded ? '' : 'none'" >
+              <ul>
+                <li *ngFor="let subItem of item.items">
+                   <div class="font-bold p-4 rounded bg-secondary-500 m-1 mr-0 mb-0" (click)="toggleDescription(subItem)">
+                    {{ subItem.label }}
+                  </div>
+                  <div class="ml-4 rounded  flex justify-end m-1 p-2" 
+                  [ngClass]="{
+                    'bg-alta': subSubItem.intensity === 'alta',
+                    'bg-moderada': subSubItem.intensity === 'moderada',
+                    'bg-suave': subSubItem.intensity === 'suave',
+                   }"
+                  *ngFor="let subSubItem of subItem.items" [style.display]="expandedSubItem === subItem ? '' : 'none'">
+                    {{ subSubItem.label  }} |  {{ subSubItem.description  }}
+                  </div>  
+                </li>
+              </ul>  
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        
+    </div>
+</div>
