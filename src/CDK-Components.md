@@ -1,11 +1,12 @@
 
-#Dynamic Accordion 
+##Dynamic Accordion 
 
 El componente "Acordcion" está diseñado para mostrar una lista de actividades con elementos expandibles. Utiliza cdk-accordion de Angular para crear una interfaz tipo acordeón que se puede colapsar. Viene primero un menu con los dias, despues en cada dia se despliega el tipo de deporte, y por cada deporte las actividades realizadas ese dia
 
-##activities.component.html
+###activities.component.html
 
-`
+~~~
+
 <div class="w-full">
         <h1 class="text-3xl font-bold mb-4"> Actividades</h1>
         <cdk-accordion >
@@ -33,10 +34,13 @@ El componente "Acordcion" está diseñado para mostrar una lista de actividades 
         </cdk-accordion>
         
     </div>
-`
+~~~
 
-##activities.component.ts
-`export class ActivitiesComponent {
+
+###activities.component.ts
+~~~
+
+export class ActivitiesComponent {
   public expandedSubItem: any = null;
 
   public list = [
@@ -127,4 +131,5 @@ El componente "Acordcion" está diseñado para mostrar una lista de actividades 
   }
 
 }
-`
+~~~
+
