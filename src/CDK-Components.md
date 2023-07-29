@@ -1,6 +1,6 @@
 
 - [DynamicAccordion](#DynamicAccordion)
-- [NavBar](#navbar)
+- [overlay](#overlay)
 - [Dropdown v1](#dropdown-v1)
 - [Dropdown v2](#dropdown-v2)
 - [Home](#home)
@@ -145,3 +145,7 @@ export class ActivitiesComponent {
 }
 ~~~
 
+
+## Overlay
+
+![overlay]
