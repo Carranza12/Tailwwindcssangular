@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Entrenamiento, Semana } from 'src/app/models/entrenamiento.model';
+import { Dialog } from '@angular/cdk/dialog';
+import { ActividadDialogComponent } from 'src/app/components/actividad-dialog/actividad-dialog.component';
 @Component({
   selector: 'app-binnacle',
   templateUrl: './binnacle.component.html',
@@ -70,7 +72,7 @@ export class BinnacleComponent {
     },
   ];
 
-  constructor() { }
+  constructor(private _dialog: Dialog) { }
 
   ngOnInit(): void {
   }
@@ -86,7 +88,13 @@ export class BinnacleComponent {
         event.currentIndex
       );
     }
+  }
 
+  public openActivityDialog():void {
+    this._dialog.open(ActividadDialogComponent, {
+      minWidth: '300px',
+      maxWidth: '50%'
+    });
   }
 
 }

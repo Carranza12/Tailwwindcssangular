@@ -15,6 +15,8 @@ import { MenuSideComponent } from './components/menu-side/menu-side.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { BinnacleComponent } from './pages/binnacle/binnacle.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {DialogModule} from '@angular/cdk/dialog';
+import { ActividadDialogComponent } from './components/actividad-dialog/actividad-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ActivitiesComponent,
     MenuSideComponent,
     BinnacleComponent,
+    ActividadDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FontAwesomeModule,
     NgChartsModule,
     CdkAccordionModule,
-    DragDropModule
+    DragDropModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
