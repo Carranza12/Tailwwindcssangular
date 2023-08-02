@@ -1,11 +1,40 @@
 <app-navbar></app-navbar>
-<div class="container mx-auto flex mt-5">
-    <app-menu-side></app-menu-side>
-    <div class="w-full">
-        <h1 class="text-3xl font-bold mb-4"> Bitácora</h1>
-
-
-       
-
+<div class="container w-full flex mt-5  mx-auto">
+  <div class="w-full grow px-4 pb-4">
+    <div>
+      <h2 class="text-xl font-bold text-black my-4">Bitácora de entrenamientos</h2>
     </div>
+    <div class="flex items-start w-full h-full" cdkDropListGroup>
+      <div class="rounded bg-gray-200 w-72 p-2 mr-3">
+        <div class="flex justify-between py-1">
+          <h3 class="text-sm font-bold ml-2">Lista de entrenamientos</h3>
+        </div>
+        <div class="text-sm mt-2 min-h-[2.5rem]" cdkDropList (cdkDropListDropped)="drop($event)"
+          [cdkDropListData]="entrenamientos">
+          <div *ngFor="let entrenamiento of entrenamientos" cdkDrag
+            class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400">
+            <span class="font-bold">{{ entrenamiento.title }}</span> -
+            <span>{{ entrenamiento.description }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="calendar">
+        <div class="shadow-effect shrink-0 rounded  p-2" *ngFor="let semana of semanal">
+          <div class="flex justify-between py-1">
+            <h3 class="text-sm font-bold ml-2">{{ semana.title }}</h3>
+          </div>
+          <div class="text-sm mt-2 min-h-[2.5rem]" cdkDropList (cdkDropListDropped)="drop($event)"
+            [cdkDropListData]="semana.entrenamientos">
+            <div *ngFor="let item of semana.entrenamientos" cdkDrag
+              class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400">
+              <span class="font-bold">{{ item.title }}</span> -
+              <span>{{ item.description }}</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 </div>

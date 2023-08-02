@@ -14,6 +14,7 @@ import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MenuSideComponent } from './components/menu-side/menu-side.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { BinnacleComponent } from './pages/binnacle/binnacle.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BinnacleComponent } from './pages/binnacle/binnacle.component';
     OverlayModule,
     FontAwesomeModule,
     NgChartsModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
